@@ -49,7 +49,7 @@ import {
 } from '../contract.ts'
 
 export const name = 'dsh-session-manager/client'
-export const inject = ['slots', 'locale', 'connection', 'sessions', 'workspaces']
+export const inject = ['slots', 'locale', 'connection', 'remote', 'sessions', 'workspaces']
 
 /** Locale namespace id registered under ctx.locale. */
 export const NS = 'dsh-session-manager'
