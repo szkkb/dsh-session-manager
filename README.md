@@ -128,8 +128,10 @@ dsh plugin --profile web add /absolute/path/to/dsh-session-manager-0.2.2.tgz
 
 ## 开发
 
+开发 SDK 固定为已验证的官方发布版本。升级时先更新 SDK 依赖并运行 `pnpm run check`，再将 `pnpm pack` 生成的包安装到隔离的官方运行环境，验证 Host 和浏览器激活。构建源码不会刷新已经安装的插件副本；运行环境必须重新安装新包。
+
 ```sh
-pnpm install        # 安装依赖（@deepseek-ai 系列为 link 本地开发依赖）
+pnpm install --frozen-lockfile  # 安装锁定的官方发布 SDK，无需 Harness 源码仓库
 pnpm run check      # typecheck + test + build
 ```
 

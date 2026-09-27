@@ -127,8 +127,10 @@ Current version targets DSH `0.1.0-rc.6` (depends on the `settings.section` / `s
 
 ## Development
 
+Development SDK dependencies are pinned to a verified official release. For an upgrade, update the SDK dependencies and run `pnpm run check`, then install the `pnpm pack` artifact in an isolated official runtime and verify both Host and browser activation. Building source does not refresh an installed plugin copy; reinstall the new artifact.
+
 ```sh
-pnpm install        # installs dependencies (@deepseek-ai packages are linked local dev dependencies)
+pnpm install --frozen-lockfile  # installs pinned published SDK packages; no Harness checkout required
 pnpm run check      # typecheck + test + build
 ```
 
